@@ -54,7 +54,7 @@ begin
   lines := TStringList.Create;
 
   SearchFiles('.\', true,
-    procedure(Path:string; SearchRec:TSearchRec; var NeedStop:boolean)
+    procedure(const Path:string; const SearchRec:TSearchRec; var NeedStop:boolean)
     begin
       if LowerCase(ExtractFileExt(SearchRec.Name)) = '.vtt' then process_file(Path + SearchRec.Name);
     end
